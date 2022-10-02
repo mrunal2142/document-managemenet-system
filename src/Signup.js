@@ -75,7 +75,7 @@ function Singup() {
                 // ...
                 verifyOtpElement.disabled = false
                 otpNumberElement.disabled = false
-                console.log("error" + error.message)
+                alert("error" + error.message)
             });
         } catch (error) {
             console.log("verifyOtp " + error.message);
