@@ -3,12 +3,14 @@ import './App.css';
 import SignIn from './SignIn';
 import React from 'react';
 import Singup from './Signup';
+import HomePage from './HomePage';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Dashboard from './Dashboard';
 
 
 
@@ -27,24 +29,27 @@ function App() {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" ><Link to="/"></Link>Home</a>
-                <a class="nav-link active"><Link className="links-section" to="/signin">Sign&nbsp;In</Link></a>
-                <a class="nav-link active"><Link className="links-section" to="/signup">Sign&nbsp;Up</Link></a>
+                <a class="nav-link active" aria-current="page" ><Link className="links-section" to="/">Home</Link></a>
+
+                <a class="nav-link active">About&nbsp;us</a>
                 <a class="nav-link active">Contact&nbsp;us</a>
               </div>
             </div>
           </div>
         </nav>
         <Switch>
+          <Route exact path="/dashboard">
+            <Dashboard/>
+          </Route>
           <Route exact path="/signup">
-            <Singup />
+            <Singup/>
           </Route>
           <Route exact path="/signin">
-            <SignIn />
+            <SignIn/>
           </Route>
-          {/* <Route path="/">
-            <singIn/>
-          </Route> */}
+          <Route path="/">
+            <HomePage/>
+          </Route>
         </Switch>
       </Fragment>
     </Router>
